@@ -1,0 +1,17 @@
+syntax = "proto3";
+package messages;
+
+service Messages {
+    rpc SendMessage (MessageRequest) returns (MessageReponse);
+}
+
+message MessageRequest {
+    string from = 1;
+    string to = 2;
+    uint32 amount = 3;
+}
+
+message MessageReponse {
+    bool success = 1;
+    string message = 2;
+}
